@@ -19,7 +19,7 @@ public class CeilingFanControllerTest {
     @Test
     public void test_pullCord1And2() throws Exception{
         /*
-        pull cord1 to get speed1 and pull cord2 to speed0
+        pull cord1 and cord2 to see they change speed and direction respectively
          */
         MvcResult result = mockMvc.perform(get("/pullcord1")).andReturn();
 
@@ -32,9 +32,6 @@ public class CeilingFanControllerTest {
         Assertions.assertNotNull(direction);
         Assertions.assertEquals(Direction.REVERSE.getDirection(),direction);
 
-        /*
-         * pull cord1 3 times to get speed3 and pull cord2 2 times to get speed1
-         */
         result = mockMvc.perform(get("/pullcord1")).andReturn();
         speed = result.getResponse().getContentAsString();
         Assertions.assertNotNull(speed);
