@@ -19,7 +19,7 @@ public class CeilingFanControllerTest {
     @Test
     public void test_pullCord1And2() throws Exception{
         /*
-        pull cord1 and cord2 to see changes in speed setting and direction respectively
+        pull cord1 and cord2 to see they change speed and direction respectively
          */
         MvcResult result = mockMvc.perform(get("/pullcord1")).andReturn();
 
