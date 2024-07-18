@@ -1,10 +1,10 @@
-Ceilingfan project contains both front end and backend code written with react and springboot frameworks
-ceiling-fan is backend project, where fan-unit is frontend 
+Ceilingfan project contains both front end and backend code written with react and springboot frameworks.
+ceiling-fan is backend project, where fan-unit is frontend.
 Java version used is 17 and Node.js should be installed while executing the code. npm packages are not added to the project.
 Ceiling fan front end UI has two cords to pull, while first one changes the speed setting and second one changes the direction of the fan.
-Refreshing of the UI screen resets the fan settings to OFF and FORWARD direction, where the attributes of the fan bean are reset during page refresh in the browser
-Ports used for frontend is 3000 and backend is 8080
-Unit test cases are written for backend functionalities of pulling cord1 and cord2
+Refreshing of the UI screen resets the fan settings to OFF and FORWARD direction, where the attributes of the fan bean are reset during page refresh in the browser.
+Ports used for frontend is 3000 and backend is 8080.
+Unit test cases are written for backend functionalities of pulling cord1 and cord2.
 
 Problem Statement: 
 ·  The unit has 2 pull cords:
