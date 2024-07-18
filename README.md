@@ -19,5 +19,5 @@ o    One reverses the direction of the fan at the current speed setting.
 
 ·   You can assume the unit is always powered (no wall switch)
 
-Include  Unit Test cases as well in the deliverable.
+Include  Unit Test cases as well in the deliverable. 
 
