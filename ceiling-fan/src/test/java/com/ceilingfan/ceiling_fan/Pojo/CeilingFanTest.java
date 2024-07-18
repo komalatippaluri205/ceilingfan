@@ -1,13 +1,10 @@
 package com.ceilingfan.ceiling_fan.Pojo;
 
 import com.ceilingfan.ceiling_fan.pojo.CeilingFan;
-import com.ceilingfan.ceiling_fan.pojo.Direction;
-import com.ceilingfan.ceiling_fan.pojo.Speed;
+import com.ceilingfan.ceiling_fan.pojo.CeilingFan.Speed;
+import com.ceilingfan.ceiling_fan.pojo.CeilingFan.Direction;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import java.util.stream.IntStream;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -22,23 +19,23 @@ public class CeilingFanTest {
         CeilingFan fan = new CeilingFan();
         String speed = fan.pullCord1();
         assertNotNull(speed);
-        assertEquals(Speed.SPEED1.getSpeed(), speed);
+        assertEquals(Speed.SPEED1.toString(), speed);
 
         speed = fan.pullCord1();
         assertNotNull(speed);
-        assertEquals(Speed.SPEED2.getSpeed(), speed);
+        assertEquals(Speed.SPEED2.toString(), speed);
 
         speed = fan.pullCord1();
         assertNotNull(speed);
-        assertEquals(Speed.SPEED3.getSpeed(), speed);
+        assertEquals(Speed.SPEED3.toString(), speed);
 
         speed = fan.pullCord1();
         assertNotNull(speed);
-        assertEquals(Speed.OFF.getSpeed(), speed);
+        assertEquals(Speed.OFF.toString(), speed);
 
         speed = fan.pullCord1();
         assertNotNull(speed);
-        assertEquals(Speed.SPEED1.getSpeed(), speed);
+        assertEquals(Speed.SPEED1.toString(), speed);
     }
 
 
@@ -48,35 +45,34 @@ public class CeilingFanTest {
         pulling cord 1 and 2 randomly changes speed and direction accordingly.
          */
         CeilingFan fan = new CeilingFan();
-        IntStream.range(1,2).forEach(i -> fan.pullCord1());
-
+        fan.pullCord1();
         String speed = fan.getSpeed();
         assertNotNull(speed);
-        assertEquals(Speed.SPEED1.getSpeed(), speed);
+        assertEquals(Speed.SPEED1.toString(), speed);
 
         fan.pullCord2();
         String direction = fan.getDirection();
         speed = fan.getSpeed();
         assertNotNull(direction);
-        assertEquals(Direction.REVERSE.getDirection(), direction);
+        assertEquals(Direction.REVERSE.toString(), direction);
         assertNotNull(speed);
-        assertEquals(Speed.SPEED1.getSpeed(), speed);
+        assertEquals(Speed.SPEED1.toString(), speed);
 
         fan.pullCord1();
         direction = fan.getDirection();
         speed = fan.getSpeed();
         assertNotNull(direction);
-        assertEquals(Direction.REVERSE.getDirection(), direction);
+        assertEquals(Direction.REVERSE.toString(), direction);
         assertNotNull(speed);
-        assertEquals(Speed.SPEED2.getSpeed(), speed);
+        assertEquals(Speed.SPEED2.toString(), speed);
 
         fan.pullCord2();
         direction = fan.getDirection();
         speed = fan.getSpeed();
         assertNotNull(direction);
-        assertEquals(Direction.FORWARD.getDirection(), direction);
+        assertEquals(Direction.FORWARD.toString(), direction);
         assertNotNull(speed);
-        assertEquals(Speed.SPEED2.getSpeed(), speed);
+        assertEquals(Speed.SPEED2.toString(), speed);
 
     }
 }

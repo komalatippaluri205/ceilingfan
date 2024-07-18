@@ -20,8 +20,8 @@ public class CeilingFan {
         index = 0;
 
         //setting initial values of fan
-        speed = Speed.OFF.getSpeed();
-        direction = Direction.FORWARD.getDirection();
+        speed = Speed.OFF.toString();
+        direction = Direction.FORWARD.toString();
     }
 
     public String getSpeed() {
@@ -36,24 +36,32 @@ public class CeilingFan {
         if (++index == settings.size()) {
             index = 0;
         }
-        this.speed = settings.get(index).getSpeed();
+        this.speed = settings.get(index).toString();
         return this.speed;
     }
 
     public String pullCord2() {
-        if (Direction.FORWARD.getDirection().equals(this.direction)) {
-            this.direction = Direction.REVERSE.getDirection();
+        if (Direction.FORWARD.toString().equals(this.direction)) {
+            this.direction = Direction.REVERSE.toString();
         } else {
-            this.direction = Direction.FORWARD.getDirection();
+            this.direction = Direction.FORWARD.toString();
         }
         return this.direction;
     }
 
     public CeilingFan reset(){
-        this.speed = Speed.OFF.getSpeed();
-        this.direction = Direction.FORWARD.getDirection();
+        this.speed = Speed.OFF.toString();
+        this.direction = Direction.FORWARD.toString();
         this.index = 0;
         return this;
+    }
+
+    public enum Speed{
+        SPEED1,SPEED2,SPEED3,OFF;
+    }
+
+    public enum Direction{
+        FORWARD, REVERSE;
     }
 
 }
